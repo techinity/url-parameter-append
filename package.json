@@ -1,0 +1,29 @@
+{
+  "name": "url-parameter-append",
+  "version": "0.1.0",
+  "description": "A simple method for adding, removing or updating parameters on a querystring",
+  "main": "url-parameter-append.js",
+  "scripts": {
+    "lint": "eslint --ext .js ./",
+    "test": "jest"
+  },
+  "keywords": [
+    "url",
+    "parameter",
+    "append"
+  ],
+  "author": "Allen Evans <allen@techinity.com> (http://techinity.com/)",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-import": "2.11.0",
+    "jest": "22.4.3"
+  },
+  "files": [
+    "url-parameter-append.js"
+  ],
+  "engines": {
+    "node": ">=6.0.0"
+  }
+}
