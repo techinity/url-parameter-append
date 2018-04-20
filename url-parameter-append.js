@@ -1,10 +1,18 @@
 /**
  * Add, update or remove querystring parameters.
  * @param {string} url
- * @param args
+ * @param {...string|object} args
  * @return {string}
  */
 function urlParameterAppend(url, ...args) {
+  if (args[0] && typeof args[0] === 'object') {
+    return urlParameterAppend.call(
+      null,
+      url,
+      ...Object.entries(args[0]).reduce((acc, item) => [...acc, ...item], []),
+    );
+  }
+
   let modifiedUrl = url;
 
   for (let i = 0; i < args.length; i += 2) {
