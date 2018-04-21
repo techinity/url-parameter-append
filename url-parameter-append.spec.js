@@ -78,4 +78,27 @@ describe('urlParameterAppend', () => {
       expect(result).toEqual('https://example.com/?updated=yes&new-param=value');
     });
   });
+
+  describe('object url parameter', () => {
+    it('should set a url parameter defined in an object config', () => {
+      const url = 'http://example.com/';
+
+      const result = urlParameterAppend(url, { added: 'yes' });
+
+      expect(result).toEqual('http://example.com/?added=yes');
+    });
+
+    it('should set multiple parameters in one go', () => {
+      const url = 'http://example.com/?existing=true&updated=false';
+
+      const params = {
+        added: 'yes',
+        updated: 'true',
+        existing: null,
+      };
+      const result = urlParameterAppend(url, params);
+
+      expect(result).toEqual('http://example.com/?updated=true&added=yes');
+    });
+  });
 });
