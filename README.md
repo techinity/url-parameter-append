@@ -1,6 +1,8 @@
 Url Parameter Append
 ====================
 
+[![Build Status](https://travis-ci.org/techinity/url-parameter-append.svg?branch=master)](https://travis-ci.org/techinity/url-parameter-append)
+
 A quick and easy utility method for adding, updating or removing a querystring parameter.
 
 Installation
