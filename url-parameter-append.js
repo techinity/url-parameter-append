@@ -20,7 +20,8 @@ function urlParameterAppend(url, ...args) {
     );
   }
 
-  let modifiedUrl = url;
+  let [modifiedUrl, ...fragment] = url.split('#');
+  fragment = fragment.length ? `#${fragment.join('#')}` : '';
 
   for (let i = 0; i < args.length; i += 2) {
     const param = args[i];
@@ -44,7 +45,7 @@ function urlParameterAppend(url, ...args) {
     }
   }
 
-  return modifiedUrl;
+  return `${modifiedUrl}${fragment}`;
 }
 
 module.exports = urlParameterAppend;
