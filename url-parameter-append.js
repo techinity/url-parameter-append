@@ -1,9 +1,9 @@
 /**
  * Backwards compatibility of Object.entries function.
  */
-const entries = typeof Object.entries === 'undefined' ?
-  obj => Object.keys(obj).map(key => [key, obj[key]]) :
-  Object.entries;
+const entries = typeof Object.entries === 'undefined'
+  ? obj => Object.keys(obj).map(key => [key, obj[key]])
+  : Object.entries;
 
 /**
  * Add, update or remove querystring parameters.
@@ -33,13 +33,13 @@ function urlParameterAppend(url, ...args) {
     const hasValue = !(value === null || value === undefined || value === '');
 
     if (firstParamRx.exec(modifiedUrl)) {
-      modifiedUrl = hasValue ?
-        modifiedUrl.replace(firstParamRx, `$1${param}=${value}$3`) :
-        modifiedUrl.replace(firstParamRx, '?');
+      modifiedUrl = hasValue
+        ? modifiedUrl.replace(firstParamRx, `$1${param}=${value}$3`)
+        : modifiedUrl.replace(firstParamRx, '?');
     } else if (secondParamRx.exec(modifiedUrl)) {
-      modifiedUrl = hasValue ?
-        modifiedUrl.replace(secondParamRx, `$1${param}=${value}`) :
-        modifiedUrl.replace(secondParamRx, '');
+      modifiedUrl = hasValue
+        ? modifiedUrl.replace(secondParamRx, `$1${param}=${value}`)
+        : modifiedUrl.replace(secondParamRx, '');
     } else if (hasValue) {
       modifiedUrl = `${modifiedUrl}${(modifiedUrl.indexOf('?') < 0 ? '?' : '&') + param}=${value}`;
     }
