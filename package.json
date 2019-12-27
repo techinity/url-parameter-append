@@ -4,10 +4,13 @@
   "description": "A simple method for adding, removing or updating parameters on a querystring",
   "main": "dist/url-parameter-append.js",
   "types": "dist/url-parameter-append",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "prebuild": "npm run clean",
     "build": "tsc",
-    "clean": "rimraf coverage/ dist/",
+    "clean": "rimraf *.tgz coverage/ dist/",
     "lint": "tslint -c tslint.json --project tsconfig.json",
     "release": "semantic-release",
     "test": "jest"
@@ -46,9 +49,6 @@
     "tslint-config-airbnb": "5.11.2",
     "typescript": "3.7.4"
   },
-  "files": [
-    "src/url-parameter-append.ts"
-  ],
   "engines": {
     "node": ">=8.0.0"
   }
