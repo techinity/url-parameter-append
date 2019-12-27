@@ -1,9 +1,6 @@
-/**
- * Backwards compatibility of Object.entries function.
- */
-const entries = typeof Object.entries === 'undefined'
-  ? (obj) => Object.keys(obj).map((key) => [key, obj[key]])
-  : Object.entries;
+import { entries } from './object-entries';
+
+const flatten = (args: {}) => entries(args).reduce((acc, item) => [...acc, ...item], []);
 
 /**
  * Add, update or remove querystring parameters.
@@ -11,17 +8,17 @@ const entries = typeof Object.entries === 'undefined'
  * @param {...string|object} args
  * @return {string}
  */
-function urlParameterAppend(url, ...args) {
+export default function urlParameterAppend(url: string, ...args: any[]): string {
   if (args[0] && typeof args[0] === 'object') {
     return urlParameterAppend.call(
       null,
       url,
-      ...entries(args[0]).reduce((acc, item) => [...acc, ...item], []),
+      ...flatten(args[0]),
     );
   }
 
+  // tslint:disable-next-line:prefer-const
   let [modifiedUrl, ...fragment] = url.split('#');
-  fragment = fragment.length ? `#${fragment.join('#')}` : '';
 
   for (let i = 0; i < args.length; i += 2) {
     const param = args[i];
@@ -45,7 +42,7 @@ function urlParameterAppend(url, ...args) {
     }
   }
 
-  return `${modifiedUrl}${fragment}`;
+  return `${modifiedUrl}${fragment.length ? `#${fragment.join('#')}` : ''}`;
 }
 
 module.exports = urlParameterAppend;
