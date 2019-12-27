@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/techinity/url-parameter-append/compare/v1.0.0...v1.0.1) (2019-12-27)
+
+
+### Bug Fixes
+
+* include missing files in published package ([0a1520a](https://github.com/techinity/url-parameter-append/commit/0a1520aac4dfe7d7911450352802a0310c49726a))
+
 # 1.0.0 (2019-12-27)
 
 
