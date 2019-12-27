@@ -2,7 +2,7 @@
  * Backwards compatibility of Object.entries function.
  */
 const entries = typeof Object.entries === 'undefined'
-  ? obj => Object.keys(obj).map(key => [key, obj[key]])
+  ? (obj) => Object.keys(obj).map((key) => [key, obj[key]])
   : Object.entries;
 
 /**
