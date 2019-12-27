@@ -1,8 +1,6 @@
 Url Parameter Append
 ====================
 
-[![Build Status](https://travis-ci.org/techinity/url-parameter-append.svg?branch=master)](https://travis-ci.org/techinity/url-parameter-append)
-
 A quick and easy utility method for adding, updating or removing querystring parameters.
 
 Installation
@@ -21,17 +19,19 @@ Tests can be executed using the following:
 npm test
 ```
 
-How to Use
+How to use
 ----------
 
-__Reference the package__
+__Reference the package:__
 ```javascript
 const urlParameterAppend = require('url-parameter-append');
 ```
+__or__
+```javascript
+import urlParameterAppend from 'url-parameter-append';
+```
 
-__Add querystring__
-
-
+__Add querystring:__
 ```javascript
 const url = urlParameterAppend('http://example.com/', 'search', 'test');
 console.log(url);
@@ -51,7 +51,7 @@ console.log(url);
 http://example.com/?search=test
 ```
 
-__Replace parameter__
+__Replace parameter:__
 ```javascript
 const url = urlParameterAppend('http://example.com/?search=test', 'search', 'other');
 console.log(url);
@@ -73,7 +73,7 @@ console.log(url);
 http://example.com/?search=other
 ```
 
-__Remove parameter__
+__Remove parameter:__
 ```javascript
 const url = urlParameterAppend('http://example.com/?search=test', 'search', null);
 console.log(url);
@@ -93,6 +93,6 @@ console.log(url);
 http://example.com/
 ```
 
-More examples can be found in [url-parameter-append.spec.js](url-parameter-append.spec.js)
+More examples can be found in [url-parameter-append.spec.ts](src/url-parameter-append.spec.ts)
 
 Tests use the [jest](https://github.com/facebook/jest) testing framework.

@@ -1,2 +1,5 @@
 .npmrc
+coverage/
+dist/
 node_modules/
+*.tgz

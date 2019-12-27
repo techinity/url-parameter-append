@@ -1,4 +1,4 @@
-const urlParameterAppend = require('./url-parameter-append');
+import urlParameterAppend from './url-parameter-append';
 
 describe('urlParameterAppend', () => {
   it('should return the url if there the modification config if not specified', () => {

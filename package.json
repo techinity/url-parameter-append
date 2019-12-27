@@ -2,9 +2,14 @@
   "name": "url-parameter-append",
   "version": "0.1.5",
   "description": "A simple method for adding, removing or updating parameters on a querystring",
-  "main": "url-parameter-append.js",
+  "main": "dist/url-parameter-append.js",
+  "types": "dist/url-parameter-append",
   "scripts": {
-    "lint": "eslint --ext .js ./",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "clean": "rimraf coverage/ dist/",
+    "lint": "tslint -c tslint.json --project tsconfig.json",
+    "release": "semantic-release",
     "test": "jest"
   },
   "keywords": [
@@ -23,15 +28,28 @@
   "homepage": "https://github.com/techinity/url-parameter-append#readme",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "6.8.0",
-    "eslint-config-airbnb-base": "14.0.0",
-    "eslint-plugin-import": "2.19.1",
-    "jest": "24.9.0"
+    "@semantic-release/changelog": "3.0.6",
+    "@semantic-release/commit-analyzer": "6.3.3",
+    "@semantic-release/git": "7.0.18",
+    "@semantic-release/npm": "5.3.5",
+    "@semantic-release/release-notes-generator": "7.3.5",
+    "@types/jest": "24.0.25",
+    "@types/node": "13.1.1",
+    "jest": "24.9.0",
+    "prettier": "1.19.1",
+    "rimraf": "3.0.0",
+    "semantic-release": "15.14.0",
+    "ts-jest": "24.2.0",
+    "ts-loader": "6.2.1",
+    "ts-node": "8.5.4",
+    "tslint": "5.20.1",
+    "tslint-config-airbnb": "5.11.2",
+    "typescript": "3.7.4"
   },
   "files": [
-    "url-parameter-append.js"
+    "src/url-parameter-append.ts"
   ],
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   }
 }
