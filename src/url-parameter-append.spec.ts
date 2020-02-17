@@ -131,4 +131,19 @@ describe('urlParameterAppend', () => {
       expect(result).toEqual('http://example.com/?updated=true&added=yes');
     });
   });
+
+  describe('edge cases', () => {
+    it('should default url to empty string if no url is defined', () => {
+      // @ts-ignore
+      const result = urlParameterAppend(undefined as any, 'param', 'value');
+
+      expect(result).toEqual('?param=value');
+    });
+
+    it('should default url to empty string if no url is defined', () => {
+      const result = urlParameterAppend(null as any, 'param', 'value');
+
+      expect(result).toEqual('?param=value');
+    });
+  });
 });
