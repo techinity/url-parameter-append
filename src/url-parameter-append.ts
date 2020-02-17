@@ -18,7 +18,7 @@ export default function urlParameterAppend(url: string, ...args: any[]): string 
   }
 
   // tslint:disable-next-line:prefer-const
-  let [modifiedUrl, ...fragment] = url.split('#');
+  let [modifiedUrl, ...fragment] = (url ?? '').split('#');
 
   for (let i = 0; i < args.length; i += 2) {
     const param = args[i];
