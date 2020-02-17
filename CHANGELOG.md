@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/techinity/url-parameter-append/compare/v1.0.1...v1.0.2) (2020-02-17)
+
+
+### Bug Fixes
+
+* handle 'split' being called on undefined when invalid url value specified ([c833cbb](https://github.com/techinity/url-parameter-append/commit/c833cbbc815278b4ae292064f5bf0d473c89cb56))
+
 ## [1.0.1](https://github.com/techinity/url-parameter-append/compare/v1.0.0...v1.0.1) (2019-12-27)
 
 
