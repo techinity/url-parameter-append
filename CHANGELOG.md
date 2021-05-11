@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/techinity/url-parameter-append/compare/v1.0.4...v1.0.5) (2021-05-11)
+
+
+### Bug Fixes
+
+* update dependencies ([0dafe6f](https://github.com/techinity/url-parameter-append/commit/0dafe6fd3f33fcdf0a36c7d95ede04d7d6b079d8))
+
 ## [1.0.4](https://github.com/techinity/url-parameter-append/compare/v1.0.3...v1.0.4) (2020-11-19)
 
 
